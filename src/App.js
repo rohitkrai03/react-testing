@@ -1,22 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
+import Counter from "./components/Counter";
+import Login from "./components/Login";
+
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h3>React testing workshop</h3>
+        <Router>
+          <div>
+            <nav style={{ marginBottom: "64px" }}>
+              <ul style={{ listStyle: "none", display: "inline" }}>
+                <li>
+                  <Link className="App-link" to="/counter">
+                    Counter
+                  </Link>
+                </li>
+                <li>
+                  <Link className="App-link" to="/login">
+                    Login
+                  </Link>
+                </li>
+                <li>
+                  <Link className="App-link" to="/formik">
+                    Formik Form
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+
+            {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+            <Switch>
+              <Route path="/counter">
+                <Counter />
+              </Route>
+              <Route path="/login">
+                <Login onSubmit={(data) => console.log(data)} />
+              </Route>
+            </Switch>
+          </div>
+        </Router>
       </header>
     </div>
   );
