@@ -11,19 +11,22 @@ const Login = ({ onSubmit }) => {
     });
   }
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="username-field">Username</label>
-        <input id="username-field" name="username" type="text" />
-      </div>
-      <div>
-        <label htmlFor="password-field">Password</label>
-        <input id="password-field" name="password" type="password" />
-      </div>
-      <div>
-        <button type="submit">Submit</button>
-      </div>
-    </form>
+    <div>
+      <h1>Basic Login</h1>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label htmlFor="username-field">Username</label>
+          <input id="username-field" name="username" type="text" />
+        </div>
+        <div>
+          <label htmlFor="password-field">Password</label>
+          <input id="password-field" name="password" type="password" />
+        </div>
+        <div>
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
   );
 };
 
