@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 import Counter from "./components/Counter";
 import Login from "./components/Login";
+import FormikLogin from "./components/FormikLogin";
 
 import "./App.css";
 
@@ -40,6 +41,9 @@ function App() {
               </Route>
               <Route path="/login">
                 <Login onSubmit={(data) => console.log(data)} />
+              </Route>
+              <Route path="/formik">
+                <FormikLogin onSubmit={(data) => console.log(data)} />
               </Route>
             </Switch>
           </div>
