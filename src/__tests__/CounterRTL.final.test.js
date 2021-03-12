@@ -3,7 +3,7 @@ import { render, fireEvent, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import Counter from "../components/counter";
 
-test("counter increments and decrements when the buttons are clicked", () => {
+test("counter rtl: counter increments and decrements when the buttons are clicked", () => {
   const { container } = render(<Counter />);
 
   const [decrement, increment] = container.querySelectorAll("button");
@@ -18,7 +18,7 @@ test("counter increments and decrements when the buttons are clicked", () => {
   expect(message).toHaveTextContent("Current count: 0");
 });
 
-test("extra: counter increments and decrements when the buttons are clicked", () => {
+test("counter rtl extra: counter increments and decrements when the buttons are clicked", () => {
   render(<Counter />);
   const increment = screen.getByRole("button", { name: /increment/i });
   const decrement = screen.getByRole("button", { name: /decrement/i });

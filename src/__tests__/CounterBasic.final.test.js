@@ -6,7 +6,7 @@ beforeEach(() => {
   document.body.innerHTML = "";
 });
 
-test("counter increments and decrements when the buttons are clicked", () => {
+test("counter basic: counter increments and decrements when the buttons are clicked", () => {
   const div = document.createElement("div");
   document.body.appendChild(div);
   ReactDOM.render(<Counter />, div);

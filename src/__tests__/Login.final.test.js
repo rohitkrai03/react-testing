@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import Login from "../components/Login";
 
-test("extra credit 1: submitting the form calls onSubmit with username and password", () => {
+test("basic login: submitting the form calls onSubmit with username and password", () => {
   const handleSubmit = jest.fn();
   render(<Login onSubmit={handleSubmit} />);
 
